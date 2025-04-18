@@ -235,7 +235,7 @@ function App() {
                         <span className="text-[#64ffda] text-2xl">👥</span>
                       </div>
                       <div>
-                        <p className="text-[#ccd6f6]">TNTECH ACM Vice-President</p>
+                        <p className="text-[#ccd6f6]">Former TNTECH ACM Vice-President</p>
                         <p className="text-[#8892b0] text-sm">Leading tech community initiatives</p>
                       </div>
                     </div>
