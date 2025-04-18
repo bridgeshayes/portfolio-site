@@ -10,12 +10,18 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import YourTour from "./assets/tour_landscape.png";
+import ParticlesBackground from "./components/ParticlesBackground";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   useEffect(() => {
+    // Initialize AOS
     AOS.init({
       duration: 800,
       once: true,
+      offset: 100,
+      easing: 'ease-in-out',
+      delay: 100
     });
 
     // Add smooth scrolling behavior
@@ -32,7 +38,7 @@ function App() {
         }
       });
     });
-  });
+  }, []); // Add empty dependency array to run only once
   const [typedText, setTypedText] = useState("");
   const [hasTyped, setHasTyped] = useState(false);
   const fullText = `{
@@ -123,17 +129,29 @@ function App() {
         <div className="absolute inset-0 bg-[#0a192f]">
           <div className="absolute inset-0 bg-[url('./assets/WorldMap.svg')] opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]"></div>
+          <ParticlesBackground />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-7xl font-bold mb-6">
-            <span className="text-[#64ffda]">$</span> Garrett Hayes
+          <h2 className="text-4xl md:text-7xl font-bold mb-6 group">
+            <span className="text-[#64ffda] group-hover:text-[#52e0c4] transition-colors duration-300">$</span>{" "}
+            <span className="group-hover:text-[#64ffda] transition-colors duration-300">Garrett Hayes</span>
           </h2>
-          <p className="text-xl md:text-2xl text-[#8892b0] mb-8">Full Stack Developer & DevOps Engineer</p>
+          <p className="text-xl md:text-2xl text-[#8892b0] mb-8 group">
+            <span className="group-hover:text-[#ccd6f6] transition-colors duration-300">Full Stack Developer</span>{" "}
+            <span className="text-[#64ffda] group-hover:text-[#52e0c4] transition-colors duration-300">&</span>{" "}
+            <span className="group-hover:text-[#ccd6f6] transition-colors duration-300">DevOps Engineer</span>
+          </p>
           <div className="flex justify-center space-x-4">
-            <a href="#projects" className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-colors duration-300">
+            <a 
+              href="#projects" 
+              className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/20"
+            >
               View Projects
             </a>
-            <a href="#experience" className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-colors duration-300">
+            <a 
+              href="#experience" 
+              className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/20"
+            >
               View Experience
             </a>
           </div>
@@ -141,8 +159,16 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-[#112240]">
-        <div className="container mx-auto px-4">
+      <section id="about" className="py-20 bg-[#112240] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 
             className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
             data-aos="fade-up"
@@ -282,8 +308,16 @@ function App() {
       </section>
 
       {/* YourTour Section */}
-      <section className="py-20 bg-[#0a192f]">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-[#0a192f] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/3 w-[28rem] h-[28rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-[24rem] h-[24rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/2 right-1/4 w-3 h-3 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 
             className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
             data-aos="fade-up"
@@ -404,8 +438,16 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-[#112240]">
-        <div className="container mx-auto px-4">
+      <section id="projects" className="py-20 bg-[#112240] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-[32rem] h-[32rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
+          <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <h2 
             className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
             data-aos="fade-up"
@@ -424,6 +466,9 @@ function App() {
 
       {/* Experience Section */}
       <ExperienceSection experience={experience} />
+
+      {/* Back to Top Button */}
+      <BackToTop />
 
       {/* Footer */}
       <footer className="bg-[#0a192f] py-12 border-t border-[#1e293b]">
