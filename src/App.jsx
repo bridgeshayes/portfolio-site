@@ -15,14 +15,17 @@ import BackToTop from "./components/BackToTop";
 
 function App() {
   useEffect(() => {
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100,
-      easing: 'ease-in-out',
-      delay: 100
-    });
+    // Initialize AOS with proper configuration
+    if (typeof window !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+        easing: 'ease-in-out',
+        delay: 100,
+        disable: 'mobile'
+      });
+    }
 
     // Add smooth scrolling behavior
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

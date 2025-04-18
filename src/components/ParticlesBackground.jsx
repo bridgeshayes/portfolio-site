@@ -1,11 +1,11 @@
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import React from 'react';
+import Particles from 'react-tsparticles';
+import { loadFull } from 'tsparticles';
 
-const ParticlesBackground = () => {
-  const particlesInit = useCallback(async (engine) => {
+function ParticlesBackground() {
+  const particlesInit = async (engine) => {
     await loadFull(engine);
-  }, []);
+  };
 
   return (
     <div className="absolute inset-0 z-0">
@@ -15,7 +15,7 @@ const ParticlesBackground = () => {
         options={{
           particles: {
             number: {
-              value: 100,
+              value: 80,
               density: {
                 enable: true,
                 value_area: 800
@@ -25,19 +25,15 @@ const ParticlesBackground = () => {
               value: "#64ffda"
             },
             shape: {
-              type: "circle",
-              stroke: {
-                width: 0,
-                color: "#64ffda"
-              }
+              type: "circle"
             },
             opacity: {
-              value: 0.7,
+              value: 0.5,
               random: true,
               anim: {
                 enable: true,
                 speed: 1,
-                opacity_min: 0.3,
+                opacity_min: 0.1,
                 sync: false
               }
             },
@@ -106,6 +102,6 @@ const ParticlesBackground = () => {
       />
     </div>
   );
-};
+}
 
 export default ParticlesBackground; 
