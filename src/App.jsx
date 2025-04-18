@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import YourTour from "./assets/tour_landscape.png";
+import YourTour from "./assets/tour.png";
 import ParticlesBackground from "./components/ParticlesBackground";
 import BackToTop from "./components/BackToTop";
 
@@ -207,24 +207,52 @@ function App() {
                       Tennessee Technological University<br />
                       Bachelor of Science in Computer Science
                     </div>
-                    
+
                     <div className="flex items-center" data-aos="fade-up" data-aos-delay="700">
+                      <span className="text-[#64ffda]">$</span>
+                      <span className="ml-2 text-[#ccd6f6]">cat interests.txt</span>
+                    </div>
+                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="800">
+                      Full Stack Development<br />
+                      DevOps & Cloud Computing<br />
+                      Mobile App Development<br />
+                      Open Source Contribution
+                    </div>
+                    
+                    <div className="flex items-center" data-aos="fade-up" data-aos-delay="900">
                       <span className="text-[#64ffda]">$</span>
                       <span className="ml-2 text-[#ccd6f6]">ls skills/</span>
                     </div>
-                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="800">
+                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="1000">
                       <div className="flex flex-wrap gap-2">
-                        {["React", "JavaScript", "HTML/CSS", "Tailwind CSS", "Agile/Scrum", "Git/GitHub"].map((skill, index) => (
+                        {[
+                          "React.js", "JavaScript", "TypeScript", "HTML5", "CSS3", 
+                          "Tailwind", "Node.js", "Express.js", "MongoDB", "PostgreSQL",
+                          "Docker", "Docker", "AWS", "Git/GitHub", "Linux",
+                          "RESTful APIs", "Next.js", "Agile/Scrum",
+                          "VSCode", "Postman", "ESRI GIS"
+                        ].map((skill, index) => (
                           <span 
                             key={index} 
                             className="px-2 py-1 bg-[#112240] text-[#64ffda] rounded text-sm"
                             data-aos="fade-up"
-                            data-aos-delay={900 + (index * 100)}
+                            data-aos-delay={1100 + (index * 50)}
                           >
                             {skill}
                           </span>
                         ))}
                       </div>
+                    </div>
+
+                    <div className="flex items-center" data-aos="fade-up" data-aos-delay="1200">
+                      <span className="text-[#64ffda]">$</span>
+                      <span className="ml-2 text-[#ccd6f6]">cat current_focus.txt</span>
+                    </div>
+                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="1300">
+                      Building scalable web applications<br />
+                      Cloud infrastructure & DevOps<br />
+                      Mobile-first development<br />
+                      Continuous learning & improvement
                     </div>
                   </div>
                 </div>
@@ -237,15 +265,67 @@ function App() {
                   data-aos="fade-left"
                   data-aos-delay="200"
                 >
-                  <h3 className="text-xl font-bold text-[#ccd6f6] mb-4">Current Focus</h3>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
-                      <span className="text-[#64ffda] text-2xl">🚀</span>
-                    </div>
-                    <div>
-                      <p className="text-[#ccd6f6]">DevOps Engineering</p>
-                      <p className="text-[#8892b0] text-sm">Building scalable infrastructure</p>
-                    </div>
+                  <h3 className="text-xl font-bold text-[#ccd6f6] mb-4">Connect With Me</h3>
+                  <div className="space-y-4">
+                    <a 
+                      href="https://github.com/bridgeshayes" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-4 p-3 rounded-lg hover:bg-[#112240] transition-colors duration-300 group"
+                    >
+                      <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                        <FontAwesomeIcon icon={faGithub} className="text-[#64ffda] text-2xl" />
+                      </div>
+                      <div>
+                        <p className="text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300">GitHub</p>
+                        <p className="text-[#8892b0] text-sm">@bridgeshayes</p>
+                      </div>
+                      <span className="ml-auto text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
+                    </a>
+
+                    <a 
+                      href="https://linkedin.com/in/garrett-bridges-hayes" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-4 p-3 rounded-lg hover:bg-[#112240] transition-colors duration-300 group"
+                    >
+                      <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                        <FontAwesomeIcon icon={faLinkedin} className="text-[#64ffda] text-2xl" />
+                      </div>
+                      <div>
+                        <p className="text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300">LinkedIn</p>
+                        <p className="text-[#8892b0] text-sm">Garrett Bridges-Hayes</p>
+                      </div>
+                      <span className="ml-auto text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
+                    </a>
+
+                    <a 
+                      href="mailto:garrettbridgeshayes@gmail.com" 
+                      className="flex items-center space-x-4 p-3 rounded-lg hover:bg-[#112240] transition-colors duration-300 group"
+                    >
+                      <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                        <span className="text-[#64ffda] text-2xl">📧</span>
+                      </div>
+                      <div>
+                        <p className="text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300">Email</p>
+                        <p className="text-[#8892b0] text-sm">garrettbridgeshayes@gmail.com</p>
+                      </div>
+                      <span className="ml-auto text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
+                    </a>
+
+                    <button 
+                      onClick={downloadResume}
+                      className="w-full flex items-center space-x-4 p-3 rounded-lg hover:bg-[#112240] transition-colors duration-300 group text-left"
+                    >
+                      <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                        <span className="text-[#64ffda] text-2xl">📄</span>
+                      </div>
+                      <div>
+                        <p className="text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors duration-300">Resume</p>
+                        <p className="text-[#8892b0] text-sm">Download PDF</p>
+                      </div>
+                      <span className="ml-auto text-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity duration-300">→</span>
+                    </button>
                   </div>
                 </div>
 
@@ -331,21 +411,47 @@ function App() {
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
+                <h3 className="text-2xl font-bold text-[#ccd6f6]">Revolutionizing Road Trips</h3>
                 <p className="text-[#8892b0] text-lg">
-                  YourTour is a mobile navigation app that turns any drive into a tour! As the user embarks on a trip, 
-                  YourTour takes the user's current location and generates facts and trivia about towns and cities as 
-                  the drive progresses.
+                  YourTour transforms ordinary drives into engaging adventures. As you travel, the app dynamically generates 
+                  interesting facts and trivia about the places you pass through, turning every journey into an educational 
+                  and entertaining experience.
                 </p>
-                <div className="flex space-x-4">
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <span className="text-[#64ffda] text-xl mt-1">→</span>
+                    <div>
+                      <h4 className="text-[#ccd6f6] font-semibold">Real-time Location Awareness</h4>
+                      <p className="text-[#8892b0]">Automatically detects your location and provides relevant information about nearby points of interest.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <span className="text-[#64ffda] text-xl mt-1">→</span>
+                    <div>
+                      <h4 className="text-[#ccd6f6] font-semibold">Dynamic Content Generation</h4>
+                      <p className="text-[#8892b0]">Curates interesting facts and historical information about towns and cities along your route.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <span className="text-[#64ffda] text-xl mt-1">→</span>
+                    <div>
+                      <h4 className="text-[#ccd6f6] font-semibold">User Curated Content</h4>
+                      <p className="text-[#8892b0]">Facts and trivia are generated based on user defined interests to ensure every drive is tailored to the user.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-center pt-6">
                   <a
                     href="https://www.yourtournavigation.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-colors duration-300"
+                    className="group relative px-8 py-4 bg-[#64ffda] text-[#0a192f] rounded-md overflow-hidden"
                     data-aos="fade-up"
                     data-aos-delay="900"
                   >
-                    Learn More
+                    <span className="relative z-10 font-semibold">Learn More</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#52e0c4] to-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute -inset-1 bg-[#64ffda]/20 rounded-md blur-lg group-hover:blur-xl transition-all duration-300"></div>
                   </a>
                 </div>
               </div>
@@ -371,7 +477,7 @@ function App() {
               >
                 Awards & Recognition
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {/* Award 1 */}
                 <div 
                   className="bg-[#112240] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
@@ -397,7 +503,7 @@ function App() {
                     <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
                       <span className="text-[#64ffda] text-2xl">💡</span>
                     </div>
-                    <h4 className="text-xl font-bold text-[#ccd6f6]">1st Place</h4>
+                    <h4 className="text-xl font-bold text-[#ccd6f6]">1st Place Overall</h4>
                   </div>
                   <p className="text-[#8892b0]">Tennessee Tech Idea Challenge</p>               
                 </div>
@@ -468,45 +574,12 @@ function App() {
       <ExperienceSection experience={experience} />
 
       {/* Back to Top Button */}
-      <BackToTop />
+      <BackToTop className="z-[9999]" />
 
       {/* Footer */}
       <footer className="bg-[#0a192f] py-12 border-t border-[#1e293b]">
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg font-semibold mb-4 text-[#64ffda]">&copy; 2024 Garrett Hayes</p>
-          <div className="flex justify-center space-x-6 mb-6">
-            <a
-              href="https://github.com/bridgeshayes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
-            >
-              <FontAwesomeIcon icon={faGithub} size="2x" />
-            </a>
-            <a
-              href="https://linkedin.com/in/garrett-bridges-hayes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="2x" />
-            </a>
-          </div>
-          <p className="text-[#8892b0] mb-4">
-            Contact:{" "}
-            <a
-              href="mailto:garrettbridgeshayes@gmail.com"
-              className="text-[#64ffda] hover:underline"
-            >
-              garrettbridgeshayes@gmail.com
-            </a>
-          </p>
-          <button 
-            onClick={downloadResume}
-            className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-colors duration-300"
-          >
-            Download Resume
-          </button>
         </div>
       </footer>
     </div>

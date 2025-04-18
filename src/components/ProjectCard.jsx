@@ -44,17 +44,7 @@ const ProjectCard = ({ project, index }) => {
         <h3 className="text-xl font-bold text-[#ccd6f6] mb-2 group-hover:text-[#64ffda] transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="text-[#8892b0] mb-4">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.techStack && project.techStack.map((tech, i) => (
-            <span
-              key={i}
-              className="px-2 py-1 text-xs bg-[#112240] text-[#64ffda] rounded-full border border-[#1e293b] group-hover:border-[#64ffda] transition-colors duration-300"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        <p className="text-[#8892b0]">{project.description}</p>
       </div>
     </div>
   );

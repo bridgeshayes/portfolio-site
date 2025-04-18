@@ -28,12 +28,12 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 p-4 bg-[#64ffda] text-[#0a192f] rounded-full shadow-lg hover:bg-[#52e0c4] transition-all duration-300 transform hover:scale-110 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      className={`fixed bottom-8 right-8 p-4 bg-[#64ffda] text-[#0a192f] rounded-full shadow-lg hover:bg-[#52e0c4] transition-all duration-300 transform hover:scale-110 hover:shadow-[#64ffda]/20 ${
+        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
-      aria-label="Back to top"
+      style={{ zIndex: 9999 }}
     >
-      <FontAwesomeIcon icon={faArrowUp} size="lg" />
+      <FontAwesomeIcon icon={faArrowUp} className="text-xl" />
     </button>
   );
 };
