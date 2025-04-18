@@ -4,54 +4,68 @@ import AOS from 'aos'; // Ensure AOS is imported
 function ExperienceSection({ experience }) {
   const [activeTab, setActiveTab] = useState(0);
 
+  // Helper function to get company name from image path
+  const getCompanyName = (imagePath) => {
+    const name = imagePath.split('/').pop().split('.')[0];
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
+
   return (
-    <section id="experience" className="py-12 bg-base-100">
-      <h2 className="text-4xl font-bold mb-8 text-center">Experience</h2>
-      <div className="flex items-center justify-center">
-        {/* Timeline */}
-        <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical basis-1/2">
-          {experience.map((exp, index) => (
-            <li
-              key={index}
-              className={index % 2 === 0 ? "flex-row" : "flex-row-reverse"}
-              data-aos="fade-up" // Add AOS attribute for animation
-            >
-              <div className="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="h-5 w-5"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
+    <section id="experience" className="py-20 bg-[#112240]">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]">
+          <span className="text-[#64ffda]">#</span> Experience
+        </h2>
+        <div className="max-w-4xl mx-auto">
+          {experience.map((exp, index) => {
+            const responsibilities = exp.responsibilities || [];
+            const technologies = exp.technologies || [];
+            const companyName = getCompanyName(exp.company);
+
+            return (
               <div
-                className={`mb-10 ${
-                  index % 2 === 0
-                    ? "timeline-start md:text-end"
-                    : "timeline-end md:text-start"
-                }`}
+                key={index}
+                className="mb-12 bg-[#0a192f] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
-                <time className="font-mono italic">{exp.date}</time>
-                <div className="text-lg font-black">{exp.title}</div>
-                {exp.description}
-                <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <img
-                    src={exp.image}
-                    alt={exp.title}
-                    className="h-40"
-                  ></img>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#ccd6f6]">{exp.title}</h3>
+                    <div className="flex items-center mt-2">
+                      <span className="text-[#8892b0]">{companyName}</span>
+                      <span className="mx-2 text-[#64ffda]">•</span>
+                      <span className="text-[#8892b0]">{exp.date}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {exp.description && (
+                  <p className="text-[#8892b0] mb-4 italic">{exp.description}</p>
+                )}
+                
+                <ul className="list-disc list-inside text-[#8892b0] space-y-2 mb-4">
+                  {responsibilities.map((resp, i) => (
+                    <li key={i} className="hover:text-[#ccd6f6] transition-colors duration-300">
+                      {resp}
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="flex flex-wrap gap-2">
+                  {technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 text-sm bg-[#112240] text-[#64ffda] rounded-full border border-[#1e293b]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-              <hr />
-            </li>
-          ))}
-        </ul>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

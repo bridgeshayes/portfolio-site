@@ -50,6 +50,13 @@ const projects = [
     description:
       "Developed and deployed a multi-site web server on a Raspberry Pi 5, hosting multiple websites and backends, featuring a custom-built frontend with secure login functionality.",
       techStack: ['HTML, CSS, JavaScript']
+  },
+  {
+    title: "DevNotes",
+    image: DevNotes,
+    description:
+      "Currently developing DevNotes, a web application that allows developers and product owners to make product documentation a breeze. Allowing documentation to be generated and kept in secure and easily managable locations.",
+      techStack: ['HTML, CSS, JavaScript']
   }
 ];
 

@@ -9,10 +9,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import YourTour from "./assets/tour_landscape.png";
 
 function App() {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    // Add smooth scrolling behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
   });
   const [typedText, setTypedText] = useState("");
   const [hasTyped, setHasTyped] = useState(false);
@@ -82,137 +101,340 @@ function App() {
     link.click();
   }
 
+  // Filter out YourTour from projects
+  const filteredProjects = projects.filter(project => project.title !== "YourTour Navigation");
+
   return (
-    <div className="font-sans antialiased text-gray-900">
+    <div className="font-mono antialiased bg-[#0a192f] text-[#ccd6f6]">
       {/* Navbar */}
-      <nav className="bg-base-200 p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Garrett Hayes</h1>
-          {/* <div className="dropdown dropdown-end lg:hidden">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#experience">Experience</a>
-              </li>
-            </ul>
+      <nav className="fixed w-full bg-[#0a192f]/80 backdrop-blur-md z-50 border-b border-[#1e293b]">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-[#64ffda] to-[#8892b0] bg-clip-text text-transparent">GH</h1>
+          <div className="hidden md:flex space-x-8">
+            <a href="#about" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300">About</a>
+            <a href="#projects" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300">Projects</a>
+            <a href="#experience" className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300">Experience</a>
           </div>
-          <ul className="hidden lg:flex space-x-6">
-            <li>
-              <a href="#about" className="btn btn-ghost">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="btn btn-ghost">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#experience" className="btn btn-ghost">
-                Experience
-              </a>
-            </li>
-          </ul> */}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen bg-base-300 flex items-center justify-center text-center overflow-hidden">
-        {/* Background Parallax Image */}
-        <img
-          src={map}
-          alt="Hero Background"
-          className="absolute inset-0 object-cover w-full h-full z-0 opacity-50" // Image opacity for effect
-        />
-
-        {/* Floating Elements */}
-        <div className="relative z-10">
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
-            Welcome to My Portfolio
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a192f]">
+          <div className="absolute inset-0 bg-[url('./assets/WorldMap.svg')] opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-4xl md:text-7xl font-bold mb-6">
+            <span className="text-[#64ffda]">$</span> Garrett Hayes
           </h2>
+          <p className="text-xl md:text-2xl text-[#8892b0] mb-8">Full Stack Developer & DevOps Engineer</p>
+          <div className="flex justify-center space-x-4">
+            <a href="#projects" className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-colors duration-300">
+              View Projects
+            </a>
+            <a href="#experience" className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-colors duration-300">
+              View Experience
+            </a>
+          </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section
-        id="about"
-        className="py-12 bg-base-100 flex items-center justify-center"
-      >
-        <div className="container mx-auto flex flex-col items-center space-y-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            About Me
+      <section id="about" className="py-20 bg-[#112240]">
+        <div className="container mx-auto px-4">
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
+            data-aos="fade-up"
+          >
+            <span className="text-[#64ffda]">#</span> About Me
           </h2>
-          {/* Mockup code block with a fixed height */}
-          <div className="w-full bg-base-200 p-8 rounded-lg shadow-lg">
-            <div
-              className="mockup-code p-4"
-              style={{ height: "700px", overflowY: "auto" }} // Set a fixed height with scrolling
-            >
-              <pre>
-                <code>{typedText}</code>
-              </pre>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Left Column - Terminal Style */}
+              <div 
+                className="bg-[#0a192f] rounded-lg border border-[#1e293b] overflow-hidden"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                <div className="bg-[#1e293b] px-4 py-2 flex items-center">
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  </div>
+                  <div className="ml-4 text-sm text-[#8892b0]">terminal</div>
+                </div>
+                <div className="p-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center" data-aos="fade-up" data-aos-delay="300">
+                      <span className="text-[#64ffda]">$</span>
+                      <span className="ml-2 text-[#ccd6f6]">whoami</span>
+                    </div>
+                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="400">Garrett Hayes</div>
+                    
+                    <div className="flex items-center" data-aos="fade-up" data-aos-delay="500">
+                      <span className="text-[#64ffda]">$</span>
+                      <span className="ml-2 text-[#ccd6f6]">cat education.txt</span>
+                    </div>
+                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="600">
+                      Tennessee Technological University<br />
+                      Bachelor of Science in Computer Science
+                    </div>
+                    
+                    <div className="flex items-center" data-aos="fade-up" data-aos-delay="700">
+                      <span className="text-[#64ffda]">$</span>
+                      <span className="ml-2 text-[#ccd6f6]">ls skills/</span>
+                    </div>
+                    <div className="text-[#8892b0] ml-4" data-aos="fade-up" data-aos-delay="800">
+                      <div className="flex flex-wrap gap-2">
+                        {["React", "JavaScript", "HTML/CSS", "Tailwind CSS", "Agile/Scrum", "Git/GitHub"].map((skill, index) => (
+                          <span 
+                            key={index} 
+                            className="px-2 py-1 bg-[#112240] text-[#64ffda] rounded text-sm"
+                            data-aos="fade-up"
+                            data-aos-delay={900 + (index * 100)}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column - Interactive Stats */}
+              <div className="space-y-6">
+                <div 
+                  className="bg-[#0a192f] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                >
+                  <h3 className="text-xl font-bold text-[#ccd6f6] mb-4">Current Focus</h3>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#64ffda] text-2xl">🚀</span>
+                    </div>
+                    <div>
+                      <p className="text-[#ccd6f6]">DevOps Engineering</p>
+                      <p className="text-[#8892b0] text-sm">Building scalable infrastructure</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div 
+                  className="bg-[#0a192f] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-left"
+                  data-aos-delay="400"
+                >
+                  <h3 className="text-xl font-bold text-[#ccd6f6] mb-4">Leadership</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                        <span className="text-[#64ffda] text-2xl">👥</span>
+                      </div>
+                      <div>
+                        <p className="text-[#ccd6f6]">TNTECH ACM Vice-President</p>
+                        <p className="text-[#8892b0] text-sm">Leading tech community initiatives</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                        <span className="text-[#64ffda] text-2xl">📊</span>
+                      </div>
+                      <div>
+                        <p className="text-[#ccd6f6]">Team Lead/Scrum Master</p>
+                        <p className="text-[#8892b0] text-sm">Managing agile development teams</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div 
+                  className="bg-[#0a192f] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-left"
+                  data-aos-delay="600"
+                >
+                  <h3 className="text-xl font-bold text-[#ccd6f6] mb-4">Goals</h3>
+                  <ul className="space-y-2">
+                    {[
+                      "Build innovative software solutions",
+                      "Expand technical expertise",
+                      "Contribute to impactful projects"
+                    ].map((goal, index) => (
+                      <li 
+                        key={index} 
+                        className="flex items-center space-x-2 text-[#8892b0]"
+                        data-aos="fade-left"
+                        data-aos-delay={700 + (index * 100)}
+                      >
+                        <span className="text-[#64ffda]">→</span>
+                        <span>{goal}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* YourTour Section */}
+      <section className="py-20 bg-[#0a192f]">
+        <div className="container mx-auto px-4">
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
+            data-aos="fade-up"
+          >
+            <span className="text-[#64ffda]">#</span> YourTour
+          </h2>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+              <div 
+                className="space-y-6"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                <p className="text-[#8892b0] text-lg">
+                  YourTour is a mobile navigation app that turns any drive into a tour! As the user embarks on a trip, 
+                  YourTour takes the user's current location and generates facts and trivia about towns and cities as 
+                  the drive progresses.
+                </p>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://www.yourtournavigation.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-colors duration-300"
+                    data-aos="fade-up"
+                    data-aos-delay="900"
+                  >
+                    Learn More
+                  </a>
+                </div>
+              </div>
+              <div 
+                className="relative"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
+                <img
+                  src={YourTour}
+                  alt="YourTour App"
+                  className="rounded-lg shadow-2xl border border-[#1e293b]"
+                />
+                <div className="absolute -inset-4 bg-[#64ffda]/10 rounded-lg -z-10"></div>
+              </div>
+            </div>
+
+            {/* Awards Section */}
+            <div className="mt-16">
+              <h3 
+                className="text-2xl font-bold text-[#ccd6f6] mb-8 text-center"
+                data-aos="fade-up"
+              >
+                Awards & Recognition
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {/* Award 1 */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#64ffda] text-2xl">👑</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-[#ccd6f6]">Grand Prize Winner</h4>
+                  </div>
+                  <p className="text-[#8892b0]">2025 Tennessee Tech Eagle Works Competition</p>
+                </div>
+
+                {/* Award 2 */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#64ffda] text-2xl">💡</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-[#ccd6f6]">1st Place</h4>
+                  </div>
+                  <p className="text-[#8892b0]">Tennessee Tech Idea Challenge</p>               
+                </div>
+
+                {/* Award 3 */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#64ffda] text-2xl">🌱</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-[#ccd6f6]">Rural Reimagined Award</h4>
+                  </div>
+                  <p className="text-[#8892b0]">Tennessee Tech Idea Challenge</p>
+                </div>
+
+                {/* Award 4 */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] p-6 hover:border-[#64ffda] transition-colors duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay="800"
+                >
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-[#64ffda]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#64ffda] text-2xl">⚡</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-[#ccd6f6]">3rd Place Overall</h4>
+                  </div>
+                  <p className="text-[#8892b0]">2025 HackMT</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 bg-base-200">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
+      <section id="projects" className="py-20 bg-[#112240]">
+        <div className="container mx-auto px-4">
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
+            data-aos="fade-up"
+          >
+            <span className="text-[#64ffda]">#</span> Projects
+          </h2>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => (
+                <ProjectCard key={index} project={project} index={index} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <ExperienceSection experience={experience}></ExperienceSection>
+      <ExperienceSection experience={experience} />
 
-      <footer className="bg-base-300 p-6 text-center rounded-t-lg shadow-md">
-        <p className="text-lg font-semibold mb-2">&copy; 2024 Garrett Hayes</p>
-        <div className="mt-4">
-          <p className="text-md">
-            Contact:{" "}
-            <a
-              href="mailto:garrettbridgeshayes@gmail.com"
-              className="text-primary font-medium hover:underline"
-            >
-              garrettbridgeshayes@gmail.com
-            </a>
-          </p>
-          <div className="flex justify-center space-x-6 mt-4 mb-4">
+      {/* Footer */}
+      <footer className="bg-[#0a192f] py-12 border-t border-[#1e293b]">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-lg font-semibold mb-4 text-[#64ffda]">&copy; 2024 Garrett Hayes</p>
+          <div className="flex justify-center space-x-6 mb-6">
             <a
               href="https://github.com/bridgeshayes"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-gray-700 transition duration-200"
+              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
             >
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
@@ -220,12 +442,26 @@ function App() {
               href="https://linkedin.com/in/garrett-bridges-hayes"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:text-gray-700 transition duration-200"
+              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors duration-300"
             >
               <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
           </div>
-          <button onClick={downloadResume} className="btn btn-link">Download Resume</button>
+          <p className="text-[#8892b0] mb-4">
+            Contact:{" "}
+            <a
+              href="mailto:garrettbridgeshayes@gmail.com"
+              className="text-[#64ffda] hover:underline"
+            >
+              garrettbridgeshayes@gmail.com
+            </a>
+          </p>
+          <button 
+            onClick={downloadResume}
+            className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-colors duration-300"
+          >
+            Download Resume
+          </button>
         </div>
       </footer>
     </div>
