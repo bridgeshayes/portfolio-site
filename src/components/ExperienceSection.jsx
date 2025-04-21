@@ -18,16 +18,8 @@ function ExperienceSection({ experience = [] }) {
   };
 
   return (
-    <section id="experience" className="py-20 bg-[#0a192f] relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-[32rem] h-[32rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-      </div>
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="experience" className="py-20 bg-[#0a192f]">
+      <div className="container mx-auto px-4">
         <h2 
           className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
           data-aos="fade-up"

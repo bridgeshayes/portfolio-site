@@ -390,17 +390,28 @@ function App() {
         </div>
       </section>
 
-      {/* YourTour Section */}
-      <section className="py-20 bg-[#0a192f] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/3 w-[28rem] h-[28rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-[24rem] h-[24rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          
-          {/* Floating Elements */}
-          <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/2 right-1/4 w-3 h-3 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '2.5s' }}></div>
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-[#112240]">
+        <div className="container mx-auto px-4">
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
+            data-aos="fade-up"
+          >
+            <span className="text-[#64ffda]">#</span> Projects
+          </h2>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.map((project, index) => (
+                <ProjectCard key={index} project={project} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+      </section>
+
+      {/* YourTour Section */}
+      <section className="py-20 bg-[#112240]">
+        <div className="container mx-auto px-4">
           <h2 
             className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
             data-aos="fade-up"
@@ -541,33 +552,6 @@ function App() {
                   <p className="text-[#8892b0]">2025 HackMT</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-[#112240] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-[32rem] h-[32rem] bg-[#64ffda]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-          
-          {/* Floating Elements */}
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-[#64ffda] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 
-            className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
-            data-aos="fade-up"
-          >
-            <span className="text-[#64ffda]">#</span> Projects
-          </h2>
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} index={index} />
-              ))}
             </div>
           </div>
         </div>
