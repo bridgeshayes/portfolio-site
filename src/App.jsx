@@ -114,7 +114,7 @@ function App() {
   const filteredProjects = projects.filter(project => project.title !== "YourTour Navigation");
 
   return (
-    <div className="font-mono antialiased bg-[#0a192f] text-[#ccd6f6]">
+    <div className="font-mono antialiased bg-[#0a192f] text-[#ccd6f6] overflow-hidden">
       {/* Navbar */}
       <nav className="fixed w-full bg-[#0a192f]/80 backdrop-blur-md z-50 border-b border-[#1e293b]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -410,7 +410,7 @@ function App() {
       </section>
 
       {/* YourTour Section */}
-      <section className="py-20 bg-[#112240]">
+      <section className="py-20 bg-[#112240] overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 
             className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#64ffda]"
