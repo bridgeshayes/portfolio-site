@@ -17,13 +17,6 @@ const projects = [
     github: null
   },
   {
-    title: "YourTour Navigation",
-    image: YourTour,
-    description:
-      "Creator and lead developer of YourTour, a mobile navigation app that turns any drive into a tour! As the user embarks on a trip, YourTour takes the user's current location and generates facts and trivia about towns and cities as the drive progresses.",
-    github: null
-  },
-  {
     title: "Tennessee Nutrient Database",
     image: TND,
     description:
@@ -56,7 +49,7 @@ const projects = [
     image: DevNotes,
     description:
       "Currently developing DevNotes, a web application that allows developers and product owners to make product documentation a breeze. Allowing documentation to be generated and kept in secure and easily managable locations.",
-    github: null
+    github: "https://github.com/bridgeshayes/DevNotes"
   }
 ];
 
