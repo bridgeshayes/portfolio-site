@@ -7,6 +7,7 @@ import HayesCore from "../assets/HayesCore.png";
 import DevNotes from "../assets/devnotes.jpg";
 import YourTour from "../assets/tour_landscape.png"
 import battle from "../assets/battle.png"
+import codebridge from "../assets/codebridge.png"
 
 const projects = [
   {
@@ -37,19 +38,26 @@ const projects = [
       "Developed a real-time facial recognition application by leveraging a pre-trained machine taught model for accurate face detection, optimizing camera feeds to ensure efficient, high-speed performance.",
     github: "https://github.com/bridgeshayes/Face-Detection"
   },
-  {
-    title: "HayesCore",
-    image: HayesCore,
-    description:
-      "Developed and deployed a multi-site web server on a Raspberry Pi 5, hosting multiple websites and backends, featuring a custom-built frontend with secure login functionality.",
-    github: null
-  },
+  // {
+  //   title: "HayesCore",
+  //   image: HayesCore,
+  //   description:
+  //     "Developed and deployed a multi-site web server on a Raspberry Pi 5, hosting multiple websites and backends, featuring a custom-built frontend with secure login functionality.",
+  //   github: null
+  // },
   {
     title: "DevNotes",
     image: DevNotes,
     description:
       "Currently developing DevNotes, a web application that allows developers and product owners to make product documentation a breeze. Allowing documentation to be generated and kept in secure and easily managable locations.",
     github: "https://github.com/bridgeshayes/DevNotes"
+  },
+  {
+    title: "CodeBridge",
+    image: codebridge,
+    description:
+      "CodeBridge is a lightweight clone of VSCode, built with Electron.js and React.js. It offers a simple, clean interface for creating and editing code files, along with integrated terminal support, providing a familiar and efficient coding environment.",
+    github: "https://github.com/bridgeshayes/CodeBridge"
   }
 ];
 
