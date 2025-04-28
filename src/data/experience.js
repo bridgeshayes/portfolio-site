@@ -1,9 +1,3 @@
-import ARCS from "../assets/arcs.png";
-import Dahlgren from "../assets/dahlgren.jpg";
-import TNDLogo from "../assets/TNRTF.png";
-import CPD from "../assets/logo.png";
-import TNTECH from "../assets/tntech.png";
-import ACM from "../assets/ACM.png";
 
 const experience = [
   {
