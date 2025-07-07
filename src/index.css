@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for news cards */
+.news-video-bg {
+  background-image: url('https://static.wixstatic.com/media/d8582e_d27a9bc0e46048d084544800c8e67411~mv2.jpg/v1/fill/w_435,h_280,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/12APR25_EAGLEWORKS_0094.jpg');
+}
+
+.news-article-bg {
+  background-image: url('https://static.wixstatic.com/media/d8582e_09c44fd0672e4071965e69b5d61a31b9~mv2.png/v1/crop/x_221,y_0,w_774,h_498/fill/w_435,h_280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/tennesseeTech.png');
+}
+
+.news-podcast-bg {
+  background-image: url('https://static.wixstatic.com/media/d8582e_89a38e4ea9d84176bb5016a13fa5c78b~mv2.jpg/v1/fill/w_435,h_280,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/yourtour6.jpg');
+}
+
+.news-university-bg {
+  background-image: url('https://static.wixstatic.com/media/d8582e_06f4f36e7f864eceb431f5cc57fab614~mv2.jpg/v1/fill/w_435,h_280,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/yourtour.jpg');
+}

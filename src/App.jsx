@@ -1,10 +1,9 @@
 import ProjectCard from "./components/ProjectCard";
 import ExperienceSection from "./components/ExperienceSection";
-import map from "./assets/WorldMap.svg";
 import projects from "./data/projects"; // Importing projects
 import experience from "./data/experience"; // Importing experience
 import resumePath from "./assets/GarrettHayesResume.pdf"
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import AOS from "aos";
@@ -550,6 +549,175 @@ function App() {
                     <h4 className="text-xl font-bold text-[#ccd6f6]">3rd Place Overall</h4>
                   </div>
                   <p className="text-[#8892b0]">2025 HackMT</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Media Coverage Section */}
+            <div className="mt-16">
+              <h3 
+                className="text-2xl font-bold text-[#ccd6f6] mb-8 text-center"
+                data-aos="fade-up"
+              >
+                Featured in the News
+              </h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {/* Video Feature */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] overflow-hidden hover:border-[#64ffda] transition-colors duration-300 group"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div className="relative">
+                    {/* Background image with overlay */}
+                    <div className="w-full h-48 bg-cover bg-center relative news-video-bg">
+                      {/* Dark overlay for better text readability */}
+                      <div className="absolute inset-0 bg-[#0a192f]/70 group-hover:bg-[#0a192f]/50 transition-colors duration-300"></div>
+                      
+                      {/* Content overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#64ffda]/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                            <span className="text-[#64ffda] text-2xl">▶️</span>
+                          </div>
+                          <p className="text-[#ccd6f6] font-semibold">Video Feature</p>
+                          <p className="text-[#8892b0] text-sm">
+                            <a href="https://www.wbir.com/article/news/local/tennessee-tech-uncover-tn-hidden-gems/51-a7387699-3181-4a82-9aec-6cda35acd431" target="_blank" rel="noopener noreferrer" className="hover:text-[#64ffda] transition-colors duration-300">Click to watch</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-[#64ffda] text-[#0a192f] px-2 py-1 rounded text-xs font-semibold">
+                      VIDEO
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold text-[#ccd6f6] mb-2">Tennessee Tech team wants to uncover TN&apos;s hidden gems</h4>
+                    <p className="text-[#8892b0] text-sm mb-3">The team of students and recent grads founded &quot;YourTour&quot; this spring after a road trip took an unexpected turn.</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#64ffda] text-sm">WBIR Knoxville</span>
+                      <span className="text-[#8892b0] text-xs">June 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Article Feature */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] overflow-hidden hover:border-[#64ffda] transition-colors duration-300 group"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <div className="relative">
+                    {/* Background image with overlay */}
+                    <div className="w-full h-48 bg-cover bg-center relative news-article-bg">
+                      {/* Dark overlay for better text readability */}
+                      <div className="absolute inset-0 bg-[#0a192f]/70 group-hover:bg-[#0a192f]/50 transition-colors duration-300"></div>
+                      
+                      {/* Content overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#64ffda]/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                            <span className="text-[#64ffda] text-2xl">📰</span>
+                          </div>
+                          <p className="text-[#ccd6f6] font-semibold">Article Feature</p>
+                          <p className="text-[#8892b0] text-sm">
+                            <a href="https://theucnow.com/2025/06/08/tech-students-ai-based-yourtour-app-to-launch-in-august/" target="_blank" rel="noopener noreferrer" className="hover:text-[#64ffda] transition-colors duration-300">Click to read</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-[#64ffda] text-[#0a192f] px-2 py-1 rounded text-xs font-semibold">
+                      ARTICLE
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold text-[#ccd6f6] mb-2">Tech Students’ AI Based YourTour App To Launch In August</h4>
+                    <p className="text-[#8892b0] text-sm mb-3">A team of Tennessee Tech computer science students are working on an AI-based navigation app to help visitors explore the region.</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#64ffda] text-sm">UCNOW</span>
+                      <span className="text-[#8892b0] text-xs">June 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video Feature */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] overflow-hidden hover:border-[#64ffda] transition-colors duration-300 group"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <div className="relative">
+                    {/* Background image with overlay */}
+                    <div className="w-full h-48 bg-cover bg-center relative news-podcast-bg">
+                      {/* Dark overlay for better text readability */}
+                      <div className="absolute inset-0 bg-[#0a192f]/70 group-hover:bg-[#0a192f]/50 transition-colors duration-300"></div>
+                      
+                      {/* Content overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#64ffda]/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                            <span className="text-[#64ffda] text-2xl">▶️</span>
+                          </div>
+                          <p className="text-[#ccd6f6] font-semibold">Video Feature</p>
+                          <p className="text-[#8892b0] text-sm">
+                            <span className="hover:text-[#64ffda] transition-colors duration-300 cursor-pointer">
+                              <a href="https://www.wbir.com/article/news/local/tennessee-tech-graduates-secure-10000-to-develop-ai-powered-east-tn-tour-guide-app/51-b51ec97d-f1a9-4296-ae37-e9861271a99d" target="_blank" rel="noopener noreferrer" className="hover:text-[#64ffda] transition-colors duration-300">Click to watch</a>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-[#64ffda] text-[#0a192f] px-2 py-1 rounded text-xs font-semibold">
+                      VIDEO
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold text-[#ccd6f6] mb-2">Tennessee Tech graduates secure $10,000 to develop AI-powered East TN tour guide app</h4>
+                    <p className="text-[#8892b0] text-sm mb-3">According to a release, Your Tour will serve as a "digital billboard" for hidden gem spots in East Tennessee, such as restaurants, scenic overlooks and....</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#64ffda] text-sm">WBIR Knoxville</span>
+                      <span className="text-[#8892b0] text-xs">June 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* University Feature */}
+                <div 
+                  className="bg-[#112240] rounded-lg border border-[#1e293b] overflow-hidden hover:border-[#64ffda] transition-colors duration-300 group"
+                  data-aos="fade-up"
+                  data-aos-delay="800"
+                >
+                  <div className="relative">
+                    {/* Background image with overlay */}
+                    <div className="w-full h-48 bg-cover bg-center relative news-university-bg">
+                      {/* Dark overlay for better text readability */}
+                      <div className="absolute inset-0 bg-[#0a192f]/70 group-hover:bg-[#0a192f]/50 transition-colors duration-300"></div>
+                      
+                      {/* Content overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-16 h-16 bg-[#64ffda]/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#64ffda]/30 transition-colors duration-300">
+                            <span className="text-[#64ffda] text-2xl">📰</span>
+                          </div>
+                          <p className="text-[#ccd6f6] font-semibold">University Feature</p>
+                          <p className="text-[#8892b0] text-sm">
+                            <a href="https://www.tntech.edu/news/releases/24-25/tech-computer-science-students-win-top-honors-for-app-designed-to-point-out-hidden-gems.php" target="_blank" rel="noopener noreferrer" className="hover:text-[#64ffda] transition-colors duration-300">Click to read</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-[#64ffda] text-[#0a192f] px-2 py-1 rounded text-xs font-semibold">
+                      ARTICLE
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold text-[#ccd6f6] mb-2">Tech computer science students, recent grads win top honors for app designed to point out state’s ‘hidden gems’</h4>
+                    <p className="text-[#8892b0] text-sm mb-3">Tennesseans looking to take a scenic drive could soon have an AI-powered tour guide at their fingertips, thanks to a new app in development...</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[#64ffda] text-sm">Tennessee Tech</span>
+                      <span className="text-[#8892b0] text-xs">June 2025</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
