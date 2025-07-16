@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import YourTour from "./assets/tour.png";
 import ParticlesBackground from "./components/ParticlesBackground";
+import profilePicture from "./assets/profile.jpg";
 import BackToTop from "./components/BackToTop";
 
 function App() {
@@ -133,29 +134,51 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a192f] to-[#112240]"></div>
           <ParticlesBackground />
         </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-7xl font-bold mb-6 group">
-            <span className="text-[#64ffda] group-hover:text-[#52e0c4] transition-colors duration-300">$</span>{" "}
-            <span className="group-hover:text-[#64ffda] transition-colors duration-300">Garrett Hayes</span>
-          </h2>
-          <p className="text-xl md:text-2xl text-[#8892b0] mb-8 group">
-            <span className="group-hover:text-[#ccd6f6] transition-colors duration-300">Full Stack Developer</span>{" "}
-            <span className="text-[#64ffda] group-hover:text-[#52e0c4] transition-colors duration-300">&</span>{" "}
-            <span className="group-hover:text-[#ccd6f6] transition-colors duration-300">DevOps Engineer</span>
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a 
-              href="#projects" 
-              className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/20"
-            >
-              View Projects
-            </a>
-            <a 
-              href="#experience" 
-              className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/20"
-            >
-              View Experience
-            </a>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center">
+            {/* Profile Picture Section - Left Side */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative group">
+                {/* Profile Picture Placeholder */}
+                <div className="w-96 h-96 rounded-full bg-gradient-to-br from-[#64ffda]/20 to-[#8892b0]/20 border-4 border-[#64ffda]/30 flex items-center justify-center overflow-hidden shadow-2xl shadow-[#64ffda]/20 group-hover:shadow-[#64ffda]/40 transition-all duration-500 group-hover:scale-105">
+                  {/* Add your profile picture here */}
+                  <img src={profilePicture} alt="Garrett Hayes" className="w-full h-full object-cover" />
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#64ffda]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                {/* Floating elements around the profile picture */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-[#64ffda]/30 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#64ffda]/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 -right-8 w-4 h-4 bg-[#64ffda]/40 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+              </div>
+            </div>
+
+            {/* Content Section - Right Side */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-4xl md:text-7xl font-bold mb-6 group">
+                <span className="text-[#64ffda] group-hover:text-[#52e0c4] transition-colors duration-300">$</span>{" "}
+                <span className="group-hover:text-[#64ffda] transition-colors duration-300">Garrett Hayes</span>
+              </h2>
+              <p className="text-xl md:text-2xl text-[#8892b0] mb-8 group">
+                <span className="group-hover:text-[#ccd6f6] transition-colors duration-300">Full Stack Developer</span>{" "}
+                <span className="text-[#64ffda] group-hover:text-[#52e0c4] transition-colors duration-300">&</span>{" "}
+                <span className="group-hover:text-[#ccd6f6] transition-colors duration-300">DevOps Engineer</span>
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                <a 
+                  href="#projects" 
+                  className="px-6 py-3 bg-[#64ffda] text-[#0a192f] rounded-md hover:bg-[#52e0c4] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/20"
+                >
+                  View Projects
+                </a>
+                <a 
+                  href="#experience" 
+                  className="px-6 py-3 border border-[#64ffda] text-[#64ffda] rounded-md hover:bg-[#64ffda]/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#64ffda]/20"
+                >
+                  View Experience
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
