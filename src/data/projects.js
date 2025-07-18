@@ -3,11 +3,18 @@ import Face from "../assets/face.jpg";
 import TND from "../assets/tnd.png";
 import HayesCore from "../assets/HayesCore.png";
 import DevNotes from "../assets/devnotes.jpg";
-import YourTour from "../assets/tour_landscape.png"
 import battle from "../assets/battle.png"
 import codebridge from "../assets/codebridge.png"
+import hermes from "../assets/hermes.png"
 
 const projects = [
+  {
+    title: "Hermes AI",
+    image: hermes,
+    description:
+      "Hermes-AI is a Python-based AI voice assistant that acts as your personal tour guide, providing engaging narration about cities and regions worldwide through natural voice interaction, real-time web searches, weather information, and email capabilities using LiveKit Agents and Google's Realtime Model.",
+    github: null
+  },
   {
     title: "Purchase Order Module",
     image: CPD,
@@ -36,13 +43,13 @@ const projects = [
       "Developed a real-time facial recognition application by leveraging a pre-trained machine taught model for accurate face detection, optimizing camera feeds to ensure efficient, high-speed performance.",
     github: "https://github.com/bridgeshayes/Face-Detection"
   },
-  // {
-  //   title: "HayesCore",
-  //   image: HayesCore,
-  //   description:
-  //     "Developed and deployed a multi-site web server on a Raspberry Pi 5, hosting multiple websites and backends, featuring a custom-built frontend with secure login functionality.",
-  //   github: null
-  // },
+  {
+    title: "HayesCore",
+    image: HayesCore,
+    description:
+      "Developed and deployed a multi-site web server on a Raspberry Pi 5, hosting multiple websites and backends, featuring a custom-built frontend with secure login functionality.",
+    github: null
+  },
   {
     title: "DevNotes",
     image: DevNotes,
